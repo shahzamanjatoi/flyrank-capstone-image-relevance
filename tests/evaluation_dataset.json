@@ -1,0 +1,405 @@
+[
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A black cat sits on a concrete ledge and looks back toward the camera.",
+"expected_match": true
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A black cat sitting on a concrete ledge.",
+"expected_match": true
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A black cat looking toward the camera.",
+"expected_match": true
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A cat sitting behind a strand of wire.",
+"expected_match": true
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A black cat.",
+"expected_match": true
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "An animal sitting outside.",
+"expected_match": true
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A black-colored feline sitting outdoors.",
+"expected_match": true
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A cat sitting on a raised concrete surface.",
+"expected_match": true
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A dark cat sitting outside and facing the camera.",
+"expected_match": true
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A feline sitting on a ledge and looking toward the viewer.",
+"expected_match": true
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A red sports car driving on a highway.",
+"expected_match": false
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A group of people playing football on a field.",
+"expected_match": false
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A bowl of fresh fruit on a table.",
+"expected_match": false
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A modern building in a city.",
+"expected_match": false
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A person riding a bicycle on a road.",
+"expected_match": false
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A landscape with mountains and trees.",
+"expected_match": false
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A brown dog sitting on a concrete ledge.",
+"expected_match": false
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A person standing beside a parked motorcycle.",
+"expected_match": false
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A white rabbit sitting in a garden.",
+"expected_match": false
+},
+{
+"image_id": "8779b51c-c171-4801-a7cf-98c0ba3ff7c8",
+"content": "A bird standing on a branch in a forest.",
+"expected_match": false
+},
+
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A man wearing a long black coat and sunglasses standing outdoors.",
+"expected_match": true
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A man in all-black clothing standing near vehicles.",
+"expected_match": true
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A person wearing sunglasses and a black coat.",
+"expected_match": true
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A man standing outside in front of black vehicles.",
+"expected_match": true
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A man wearing dark clothing and sunglasses.",
+"expected_match": true
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A man in a long dark coat standing outdoors.",
+"expected_match": true
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A person dressed entirely in black standing near cars.",
+"expected_match": true
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A man wearing a long coat with sunglasses in an outdoor area.",
+"expected_match": true
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A man standing near vehicles while wearing dark clothes.",
+"expected_match": true
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A man with sunglasses standing outside in black clothing.",
+"expected_match": true
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A bowl of fresh fruit on a kitchen table.",
+"expected_match": false
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A red sports car driving on a highway.",
+"expected_match": false
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A landscape with mountains, trees, and a river.",
+"expected_match": false
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A group of football players playing a match on a field.",
+"expected_match": false
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A black cat sitting on a concrete ledge.",
+"expected_match": false
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A robotic car with a microcontroller and exposed wiring.",
+"expected_match": false
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A bowl of food placed on a dining table.",
+"expected_match": false
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A football stadium illuminated by bright floodlights.",
+"expected_match": false
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A white dog standing beside a parked vehicle.",
+"expected_match": false
+},
+{
+"image_id": "ddc9723b-7c4b-4486-938c-a1d5cc3b1637",
+"content": "A mountain landscape covered with green trees.",
+"expected_match": false
+},
+
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A four-wheeled robotic car with an acrylic chassis and electronic components.",
+"expected_match": true
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A robotic vehicle with a microcontroller, motor driver, and jumper wires.",
+"expected_match": true
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A small autonomous robot car with four wheels and exposed electronics.",
+"expected_match": true
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A four-wheeled robot with a clear acrylic body and electronic wiring.",
+"expected_match": true
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A small robotic car built with electronic components.",
+"expected_match": true
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A robot vehicle with four wheels and a transparent chassis.",
+"expected_match": true
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A four-wheel robot containing a controller board and motor driver.",
+"expected_match": true
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A robotic car with visible wires and electronic hardware.",
+"expected_match": true
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A small four-wheeled vehicle designed as a robotic platform.",
+"expected_match": true
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A compact robot car with an acrylic body and exposed electronics.",
+"expected_match": true
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A black cat sitting on a concrete ledge outdoors.",
+"expected_match": false
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A man wearing a long black coat and sunglasses.",
+"expected_match": false
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A bowl of fresh fruit on a dining table.",
+"expected_match": false
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A mountain landscape with trees and a river.",
+"expected_match": false
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A football player running across an artificial turf field.",
+"expected_match": false
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A red sports car driving quickly along a highway.",
+"expected_match": false
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A person riding a bicycle through a city street.",
+"expected_match": false
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A large industrial machine operating inside a factory.",
+"expected_match": false
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A smartphone lying on a wooden desk.",
+"expected_match": false
+},
+{
+"image_id": "cd7d7bf4-21ae-430d-a5b4-5743b7de0827",
+"content": "A passenger airplane flying above the clouds.",
+"expected_match": false
+},
+
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "A group of young men playing football on an artificial turf pitch at night.",
+"expected_match": true
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "Football players wearing sports jerseys playing under floodlights.",
+"expected_match": true
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "People playing football on a small enclosed pitch at night.",
+"expected_match": true
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "Young football players competing on an artificial turf field.",
+"expected_match": true
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "A football match taking place at night on artificial grass.",
+"expected_match": true
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "Several people playing football under bright floodlights.",
+"expected_match": true
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "Footballers playing on an enclosed outdoor pitch after dark.",
+"expected_match": true
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "A group of players wearing sports jerseys on an artificial football field.",
+"expected_match": true
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "People competing in a football game at night.",
+"expected_match": true
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "Young men playing a football match on a floodlit turf pitch.",
+"expected_match": true
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "A black cat sitting on a concrete ledge.",
+"expected_match": false
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "A robotic car with a clear acrylic chassis and electronic components.",
+"expected_match": false
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "A man wearing a long black coat and sunglasses standing outdoors.",
+"expected_match": false
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "A bowl of fresh fruit sitting on a table.",
+"expected_match": false
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "A group of basketball players competing inside a sports hall.",
+"expected_match": false
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "A red sports car driving on a highway at night.",
+"expected_match": false
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "A tennis player serving on an outdoor tennis court.",
+"expected_match": false
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "A runner exercising on a track under stadium lights.",
+"expected_match": false
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "A group of people watching a football match from stadium seats.",
+"expected_match": false
+},
+{
+"image_id": "e25932b3-b36f-42cc-8f33-d91c63c0ef10",
+"content": "A football stadium filled with spectators during a daytime match.",
+"expected_match": false
+}
+]

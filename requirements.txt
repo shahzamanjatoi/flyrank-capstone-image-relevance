@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+sqlmodel
+psycopg2-binary
+pydantic-settings
+python-dotenv
+python-multipart
+google-genai
+numpy
+apscheduler
+pytest
+httpx
