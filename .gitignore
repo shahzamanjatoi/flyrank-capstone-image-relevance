@@ -1,12 +1,5 @@
-.venv/
+﻿.venv/
 __pycache__/
-*.pyc
-
+*.zip
+*.pdf
 .env
-
-.pytest_cache/
-.coverage
-
-.vscode/
-
-uploads/
