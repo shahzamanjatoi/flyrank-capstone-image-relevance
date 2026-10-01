@@ -7,3 +7,9 @@ __pycache__/
 *.db
 
 *.db
+
+uploads/*
+!uploads/.gitkeep
+
+uploads/*
+!uploads/.gitkeep
