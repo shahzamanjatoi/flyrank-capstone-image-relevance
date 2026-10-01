@@ -26,6 +26,21 @@ class Image(SQLModel, table=True):
     )
 
 
+class Post(SQLModel, table=True):
+    id: UUID = Field(default_factory=uuid4, primary_key=True)
+
+    title: str
+    content: str
+
+    status: str = Field(default="pending")
+
+    embedding: str | None = None
+
+    created_at: datetime = Field(
+        default_factory=lambda: datetime.now(timezone.utc)
+    )
+
+
 class MatchReview(SQLModel, table=True):
     id: UUID = Field(default_factory=uuid4, primary_key=True)
 
@@ -41,4 +56,3 @@ class MatchReview(SQLModel, table=True):
     created_at: datetime = Field(
         default_factory=lambda: datetime.now(timezone.utc)
     )
-

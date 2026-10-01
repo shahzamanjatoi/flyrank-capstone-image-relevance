@@ -1,6 +1,7 @@
 from contextlib import asynccontextmanager
 from pathlib import Path
 from uuid import UUID, uuid4
+import json
 
 from apscheduler.schedulers.background import BackgroundScheduler
 from fastapi import Depends, FastAPI, File, HTTPException, UploadFile, status
@@ -10,9 +11,10 @@ from sqlmodel import Session, select, text
 from app.ai.embedding import GeminiEmbeddingService
 from app.ai.matching import evaluate_match
 from app.ai.similarity import cosine_similarity, embedding_from_json
+from app.ai.ranking import rank_images
 from app.database import create_db_and_tables, engine, get_session
 from app.jobs.image_processing import process_image
-from app.models import Image, MatchReview
+from app.models import Image, MatchReview, Post
 
 
 UPLOAD_DIR = Path("uploads")
@@ -40,6 +42,11 @@ class ReviewCreate(BaseModel):
     reviewer_comment: str | None = None
 
 
+class PostCreate(BaseModel):
+    title: str = Field(min_length=1)
+    content: str = Field(min_length=1)
+
+
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     create_db_and_tables()
@@ -54,7 +61,7 @@ async def lifespan(app: FastAPI):
 
 app = FastAPI(
     title="AI Image Understanding & Content Matching Engine",
-    version="0.8.0",
+    version="0.9.0",
     lifespan=lifespan,
 )
 
@@ -169,14 +176,12 @@ def analyze_image(
             detail="Image not found.",
         )
 
-    # Prevent duplicate processing jobs.
     if image.status == "processing":
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
             detail="Image processing is already in progress.",
         )
 
-    # Prevent unnecessary repeated Gemini processing.
     if image.status == "analyzed":
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT,
@@ -191,7 +196,6 @@ def analyze_image(
             detail="Image file not found.",
         )
 
-    # Failed images can be submitted again.
     image.status = "processing"
 
     session.add(image)
@@ -205,8 +209,6 @@ def analyze_image(
             replace_existing=False,
         )
     except Exception as exc:
-        # If the job could not be queued, return the image to a
-        # retryable state.
         image.status = "failed"
         session.add(image)
         session.commit()
@@ -220,6 +222,145 @@ def analyze_image(
         "message": "Image processing job queued.",
         "image_id": image_id,
         "status": "processing",
+    }
+
+
+@app.post("/posts", status_code=status.HTTP_201_CREATED)
+def create_post(
+    post_data: PostCreate,
+    session: Session = Depends(get_session),
+):
+    title = post_data.title.strip()
+    content = post_data.content.strip()
+
+    if not title:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Post title cannot be empty.",
+        )
+
+    if not content:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Post content cannot be empty.",
+        )
+
+    embedding_text = f"Title: {title}. Content: {content}."
+
+    try:
+        embedding_service = GeminiEmbeddingService()
+
+        embedding = embedding_service.generate_embedding(
+            embedding_text
+        )
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=status.HTTP_502_BAD_GATEWAY,
+            detail=f"Post embedding failed: {exc}",
+        ) from exc
+
+    post = Post(
+        id=uuid4(),
+        title=title,
+        content=content,
+        status="embedded",
+        embedding=json.dumps(embedding),
+    )
+
+    session.add(post)
+    session.commit()
+    session.refresh(post)
+
+    return post
+
+
+@app.get("/posts")
+def list_posts(
+    session: Session = Depends(get_session),
+):
+    statement = select(Post).order_by(Post.created_at.desc())
+
+    posts = session.exec(statement).all()
+
+    return posts
+
+
+@app.get("/posts/{post_id}")
+def get_post(
+    post_id: UUID,
+    session: Session = Depends(get_session),
+):
+    post = session.get(Post, post_id)
+
+    if post is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Post not found.",
+        )
+
+    return post
+
+
+@app.get("/posts/{post_id}/images")
+def rank_post_images(
+    post_id: UUID,
+    session: Session = Depends(get_session),
+):
+    post = session.get(Post, post_id)
+
+    if post is None:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail="Post not found.",
+        )
+
+    if not post.embedding:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Post has not been embedded yet.",
+        )
+
+    try:
+        post_embedding = embedding_from_json(
+            post.embedding
+        )
+
+        statement = (
+            select(Image)
+            .where(Image.status == "analyzed")
+            .order_by(Image.created_at.desc())
+        )
+
+        images = session.exec(statement).all()
+
+        ranked_images = rank_images(
+            post_embedding=post_embedding,
+            images=images,
+        )
+
+    except Exception as exc:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=f"Image ranking failed: {exc}",
+        ) from exc
+
+    return {
+        "post_id": post.id,
+        "title": post.title,
+        "content": post.content,
+        "results": [
+            {
+                "rank": index + 1,
+                "image_id": image.image_id,
+                "filename": image.filename,
+                "similarity": round(image.similarity, 4),
+                "confidence": image.confidence,
+                "subject": image.subject,
+                "category": image.category,
+            }
+            for index, image in enumerate(ranked_images)
+        ],
     }
 
 
@@ -378,4 +519,3 @@ def delete_image(
         "message": "Image deleted successfully.",
         "image_id": image_id,
     }
-

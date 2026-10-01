@@ -1,0 +1,8 @@
+﻿project: flyrank-capstone-image-relevance
+version: "1.0"
+vision_model: "gemini-flash"
+confidence_threshold: 0.70
+embedding_model: "text-embedding-004"
+mismatch_guard:
+  category_check: true
+  similarity_threshold: 0.75
